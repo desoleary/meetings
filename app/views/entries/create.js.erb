@@ -1,0 +1,6 @@
+<% if @entry.persisted? %>
+  $('#entries tbody').append('<%=j render @entry %>');
+  $('#form-container').empty().append('<%=j render partial: "form", locals: {entry: Entry.new} %>');
+<% else %>
+  $('#form-container').empty().append('<%=j render partial: "form", locals: {entry: @entry} %>');
+<% end %>

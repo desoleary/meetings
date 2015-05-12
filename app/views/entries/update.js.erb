@@ -1,0 +1,5 @@
+<% if @entry.valid? %>
+  $('#entry-<%= @entry.id %>').replaceWith('<%=j render @entry %>');
+<% else %>
+  $('#form-container').html('<%=j render partial: "form", locals: {entry: @entry} %>');
+<% end %>
